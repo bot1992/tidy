@@ -1,0 +1,7 @@
+.Richtext > * {
+  white-space: pre-wrap;
+}
+
+.Richtext > *:first-child {
+  margin-top: 0;
+}

@@ -1,0 +1,211 @@
+/* Typography */
+.h1 {
+  @apply text-5xl font-bold;
+}
+
+.h2 {
+  @apply text-4xl font-bold;
+}
+
+.h3 {
+  @apply text-3xl font-bold;
+}
+
+.h4 {
+  @apply text-2xl font-bold;
+}
+
+@screen md {
+  .h1 {
+    @apply text-6xl;
+  }
+
+  .h2 {
+    @apply text-5xl;
+  }
+}
+
+/* Buttons */
+.btn,
+.btn-sm {
+  @apply font-medium inline-flex items-center justify-center border border-transparent rounded-sm leading-snug transition duration-150 ease-in-out;
+}
+
+.btn {
+  @apply px-6 py-3;
+}
+
+.btn-sm {
+  @apply px-4 py-2;
+}
+
+/* Forms */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+}
+
+.form-input,
+.form-textarea,
+.form-multiselect,
+.form-select,
+.form-checkbox,
+.form-radio {
+  @apply bg-white border border-slate-200 focus:border-blue-300;
+}
+
+.form-input,
+.form-textarea,
+.form-multiselect,
+.form-select,
+.form-checkbox {
+  @apply rounded-sm;
+}
+
+.form-input,
+.form-textarea,
+.form-multiselect,
+.form-select {
+  @apply py-3 px-4;
+}
+
+.form-input,
+.form-textarea {
+  @apply placeholder-slate-500 leading-snug;
+}
+
+.form-select {
+  @apply pr-10;
+}
+
+.form-checkbox,
+.form-radio {
+  @apply text-blue-600 rounded-sm;
+}
+
+/* Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Hero */
+.hero .column {
+  @apply flex-col gap-16;
+}
+
+.hero .row {
+  @apply flex-col gap-16;
+}
+
+.hero .justify-between,
+.hero .justify-center {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero .justify-center *,
+.hero .justify-between * {
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .hero .justify-center {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero .justify-between {
+    justify-content: space-between;
+    text-align: unset;
+  }
+
+  .hero .justify-between * {
+    text-align: unset;
+  }
+
+  .hero .row {
+    flex-direction: row;
+  }
+}
+
+/* Content Grid */
+.content-grid strong {
+  @apply font-medium text-slate-800;
+}
+
+/* Text Content */
+.text-content p {
+  @apply text-slate-500 mt-0;
+}
+
+.text-content strong {
+  @apply font-medium text-slate-800;
+}
+
+.text-content h1,
+.text-content h2,
+.text-content h3,
+.text-content h4,
+.text-content h5,
+.text-content h6 {
+  @apply font-playfair-display text-slate-800;
+}
+
+.bg-dark ~ div h1,
+.bg-dark ~ div h2,
+.bg-dark ~ div h3,
+.bg-dark ~ div h4,
+.bg-dark ~ div h5,
+.bg-dark ~ div h6 {
+  @apply text-slate-100;
+}
+
+.bg-dark ~ div p {
+  @apply text-slate-400;
+}
+
+body .text-content h1 ~ p,
+body .text-content h2 ~ p,
+body .text-content h3 ~ p,
+body .text-content h4 ~ p,
+body .text-content h5 ~ p,
+body .text-content h6 ~ p {
+  @apply mt-4;
+}
+
+/* Image Tabs */
+.image-tabs h1,
+.image-tabs h2,
+.image-tabs h3,
+.image-tabs h4,
+.image-tabs h5,
+.image-tabs h6 {
+  @apply font-playfair-display text-slate-800;
+}
+
+.image-tabs strong {
+  @apply text-slate-800;
+}
+
+.image-tabs .detailed strong {
+  @apply font-medium;
+}
+
+/* Banner */
+.banner h1,
+.banner h2,
+.banner h3,
+.banner h4,
+.banner h5,
+.banner h6 {
+  @apply font-playfair-display;
+}
