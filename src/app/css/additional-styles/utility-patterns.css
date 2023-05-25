@@ -193,11 +193,7 @@ body .text-content h6 ~ p {
 }
 
 .image-tabs strong {
-  @apply text-slate-800;
-}
-
-.image-tabs .detailed strong {
-  @apply font-medium;
+  @apply font-medium text-slate-800;
 }
 
 /* Banner */

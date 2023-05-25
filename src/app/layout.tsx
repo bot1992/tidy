@@ -6,13 +6,11 @@ import "./css/style.css"
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
-  display: "swap",
 })
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair-display",
-  display: "swap",
 })
 
 export default async function RootLayout({
@@ -24,9 +22,9 @@ export default async function RootLayout({
     <html lang="en">
       <body
         className={classNames(
-          "font-inter bg-white antialiased text-slate-800 tracking-tight",
           inter.variable,
-          playfair.variable
+          playfair.variable,
+          "font-inter bg-white antialiased text-slate-800 tracking-tight"
         )}
         suppressHydrationWarning={true}
       >
