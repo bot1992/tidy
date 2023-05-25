@@ -20,4 +20,15 @@ export type SocialMediaLabelType =
   | "linkedin"
   | "telegram"
 
+export type SpacingType = {
+  horizontal: {
+    small: string
+    large: string
+  }
+  vertical: {
+    small: string
+    large: string
+  }
+}
+
 export type Unpacked<T> = T extends (infer U)[] ? U : T

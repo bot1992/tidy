@@ -205,3 +205,8 @@ body .text-content h6 ~ p {
 .banner h6 {
   @apply font-playfair-display;
 }
+
+/* Divide */
+.bg-slate-100 ~ div .divide {
+  @apply bg-slate-300 border-slate-300;
+}

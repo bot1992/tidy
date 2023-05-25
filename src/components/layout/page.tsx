@@ -20,6 +20,7 @@ import CustomersList from "../blocks/customers-list"
 import Banner from "../blocks/banner"
 import FaqsList from "../blocks/faqs-list"
 import TestimonialsList from "../blocks/testimonials-list"
+import Spacing from "../blocks/spacing"
 
 type RenderBlocksProps = { contents: PageType["layout"] }
 
@@ -28,6 +29,7 @@ const blockComponents: { [key: string]: FC<any> } = {
   "text-content": TextContent,
   "image-tabs": ImageTabs,
   divide: Divide,
+  spacing: Spacing,
   "features-list": FeaturesList,
   "stats-list": StatsList,
   "pricing-tables": PricingTables,
@@ -83,7 +85,6 @@ const RenderBlocks: FC<RenderBlocksProps> = function ({ contents }) {
                     })}
                   >
                     {layoutBlocks.map((block) => {
-                      console.log(`${block.blockType}:  `, block)
                       const Block = blockComponents?.[block.blockType]
 
                       return !!Block ? (

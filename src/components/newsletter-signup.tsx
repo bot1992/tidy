@@ -1,12 +1,12 @@
 "use client"
 
 import { FC, FormEvent, useRef, useState } from "react"
+import classNames from "classnames"
 
 import {
   Form as FormType,
   Newsletter as NewsletterType,
 } from "../payload-types"
-import classNames from "classnames"
 
 const NewsletterSignup: FC<NewsletterType> = function ({ form }) {
   const [success, setSuccess] = useState(false)
@@ -20,6 +20,12 @@ const NewsletterSignup: FC<NewsletterType> = function ({ form }) {
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault()
+
+    if (!email) {
+      return (
+        document.querySelector(".newsletter-signup input") as HTMLInputElement
+      )?.focus()
+    }
 
     setSending(true)
 
@@ -60,7 +66,7 @@ const NewsletterSignup: FC<NewsletterType> = function ({ form }) {
   }
 
   return (
-    <form className="w-full" onSubmit={handleSubmit}>
+    <form className="newsletter-signup w-full" onSubmit={handleSubmit}>
       <div className="flex flex-col sm:flex-row justify-center max-w-xs mx-auto sm:max-w-md">
         <input
           type="email"

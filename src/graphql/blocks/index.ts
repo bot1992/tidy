@@ -41,6 +41,22 @@ const TEXT_CONTENT_BLOCK = `
     textContentPadding ${PADDING_FIELDS}
 }`
 
+export const SPACING_BLOCK = `
+...on Spacing {
+    id
+    blockType
+    spacing {
+        horizontal {
+            large
+            small
+        }
+        vertical {
+            large
+            small
+        }
+    }
+}`
+
 const IMAGE_GRID_BLOCK = `
 ...on ImageGrid {
     id
@@ -178,6 +194,7 @@ const CUSTOMERS_LIST_BLOCK = `
         name
         logo ${MEDIA_FIELDS}
     }
+    customersListDisplayStyle
     customersListPadding ${PADDING_FIELDS}
 }`
 
@@ -233,6 +250,7 @@ export const CONTENT_BLOCK = `
 ...on Content {
     id
     layoutBlocks {
+        ${SPACING_BLOCK}
         ${DIVIDE_BLOCK}
         ${MEDIA_BLOCK}
         ${CONTENT_GRID_BLOCK}

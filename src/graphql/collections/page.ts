@@ -1,4 +1,3 @@
-import { LINK_FIELDS } from "../fields/link"
 import { META_FIELDS } from "../fields/meta"
 import { PADDING_FIELDS } from "../fields/padding"
 import { MEDIA_FIELDS } from "./media"

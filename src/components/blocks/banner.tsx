@@ -35,7 +35,7 @@ const Banner: FC<Props> = function ({
   }
 
   return (
-    <Padding padding={bannerPadding} className={classNames(layout)}>
+    <Padding padding={bannerPadding} className={classNames("banner", layout)}>
       <div
         className={classNames(
           "relative flex gap-4",

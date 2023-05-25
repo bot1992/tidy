@@ -108,7 +108,7 @@ export interface Page {
       | 'extraLargeSmall'
       | 'extraLarge';
   };
-  heroMaxWidth: 'small' | 'medium' | 'large';
+  heroMaxWidth: 'small' | 'medium' | 'large' | 'extraLarge';
   heroBackground: {
     type?: 'clipped' | 'straight';
     fillType?: 'color' | 'image' | 'none';
@@ -147,7 +147,7 @@ export interface Page {
     layoutBlocks: (
       | {
           media: string | Media;
-          mediaMaxWidth: 'small' | 'medium' | 'large';
+          mediaMaxWidth: 'small' | 'medium' | 'large' | 'extraLarge';
           mediaPadding?: {
             top?:
               | 'none'
@@ -207,7 +207,7 @@ export interface Page {
           contentPlacement?: 'left' | 'center' | 'right';
           textAlignment: 'left' | 'center' | 'right';
           textSize?: 'small' | 'medium' | 'large';
-          textContentMaxWidth: 'small' | 'medium' | 'large';
+          textContentMaxWidth: 'small' | 'medium' | 'large' | 'extraLarge';
           textContentPadding?: {
             top?:
               | 'none'
@@ -1035,6 +1035,7 @@ export interface Page {
         }
     )[];
     layout: 'row' | 'column';
+    contentMaxWidth: 'small' | 'medium' | 'large' | 'extraLarge';
     basePadding?: boolean;
     contentBackground: {
       type?: 'clipped' | 'straight';
@@ -1043,7 +1044,6 @@ export interface Page {
       image: string | Media;
       height?: 'fillSmall' | 'fillMedium' | 'fillLarge' | 'half' | 'full' | 'overflow';
     };
-    retract?: boolean;
     contentPadding?: {
       top?:
         | 'none'
@@ -1090,6 +1090,7 @@ export interface Page {
         | 'extraLargeSmall'
         | 'extraLarge';
     };
+    retract?: boolean;
     id?: string;
     blockName?: string;
     blockType: 'content';
