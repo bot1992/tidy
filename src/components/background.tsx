@@ -19,8 +19,9 @@ const Background: FC<Props> = ({ background }) => {
         "lg:h-[30rem] mb-48 lg:mb-0": height === "fillSmall",
         "h-96 md:h-auto md:mb-64": height === "fillMedium",
         "h-auto mb-64 md:mb-80": height === "fillLarge",
-        "min-h-[85vh] lg:min-h-fit lg:h-[48rem] mb-36 lg:mb-0":
-          height === "overflow",
+        "lg:h-[48rem] mb-36 lg:mb-0": height === "overflowSmall",
+        "min-h-[95vh] lg:min-h-fit lg:h-[48rem] mb-36 lg:mb-0":
+          height === "overflowLarge",
         // fill
         "[clip-path:polygon(0_0,_5760px_0,_5760px_calc(100%_-_352px),_0_100%)]":
           type === "clipped",

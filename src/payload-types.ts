@@ -114,7 +114,7 @@ export interface Page {
     fillType?: 'color' | 'image' | 'none';
     color: 'darkSlate' | 'lightSlate' | 'white';
     image: string | Media;
-    height?: 'fillSmall' | 'fillMedium' | 'fillLarge' | 'half' | 'full' | 'overflow';
+    height?: 'fillSmall' | 'fillMedium' | 'fillLarge' | 'half' | 'full' | 'overflowSmall' | 'overflowLarge';
   };
   heroType: 'minimal' | 'contentLeftOfMedia' | 'contentRightOfMedia' | 'contentAboveMedia';
   heroHeadingStyle: 'serif' | 'sans';
@@ -1042,7 +1042,7 @@ export interface Page {
       fillType?: 'color' | 'image' | 'none';
       color: 'darkSlate' | 'lightSlate' | 'white';
       image: string | Media;
-      height?: 'fillSmall' | 'fillMedium' | 'fillLarge' | 'half' | 'full' | 'overflow';
+      height?: 'fillSmall' | 'fillMedium' | 'fillLarge' | 'half' | 'full' | 'overflowSmall' | 'overflowLarge';
     };
     contentPadding?: {
       top?:
