@@ -22,6 +22,7 @@ const PageHero: FC<PageType> = ({
   heroContent,
   heroHeadingStyle,
   heroCallToAction,
+  heroImageDecoration,
   heroPadding,
 }) => {
   const [videoModalOpen, setVideoModalOpen] = useState(false)
@@ -140,10 +141,12 @@ const PageHero: FC<PageType> = ({
                       {/* Image */}
                       <div className="w-full flex justify-center items-center">
                         <div className="relative w-full">
-                          {/* <div
-                          className="absolute inset-0 pointer-events-none border-2 border-slate-700 mt-3 ml-3 translate-x-4 translate-y-4 -z-10"
-                          aria-hidden="true"
-                          /> */}
+                          {heroImageDecoration && (
+                            <div
+                              className="absolute inset-0 pointer-events-none border-2 border-slate-700 mt-3 ml-3 translate-x-4 translate-y-4 -z-10"
+                              aria-hidden="true"
+                            />
+                          )}
                           <Media
                             media={
                               isVideoMedia && heroVideoThumbnail
@@ -154,7 +157,12 @@ const PageHero: FC<PageType> = ({
                             mediaProps={{
                               width: 540,
                               height: 405,
-                              className: "w-full mx-auto md:max-w-none",
+                              className: classNames(
+                                {
+                                  "w-full": layout === "column",
+                                },
+                                "mx-auto md:max-w-none"
+                              ),
                             }}
                           />
                         </div>

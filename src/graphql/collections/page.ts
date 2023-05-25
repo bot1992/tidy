@@ -30,6 +30,7 @@ query Page($slug: String) {
       heroVideoThumbnail ${MEDIA_FIELDS}
       heroBackground ${BACKGROUND_FIELDS}
       heroCallToAction ${CALL_TO_ACTION_FIELDS}
+      heroImageDecoration
       heroPadding ${PADDING_FIELDS}
       heroMaxWidth
       layout {

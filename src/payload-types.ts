@@ -142,6 +142,7 @@ export interface Page {
     appendArrow?: boolean;
     id?: string;
   }[];
+  heroImageDecoration?: boolean;
   layout: {
     layoutBlocks: (
       | {
@@ -1286,7 +1287,6 @@ export interface SupportCategory {
   description: string;
   icon: string | Media;
   archived: boolean;
-  slug?: string;
   updatedAt: string;
   createdAt: string;
 }
