@@ -1,4 +1,5 @@
 import { Inter, Playfair_Display } from "next/font/google"
+import classNames from "classnames"
 
 import "./css/style.css"
 
@@ -22,7 +23,11 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${playfair.variable} ${inter.className} font-inter bg-white antialiased text-slate-800 tracking-tight`}
+        className={classNames(
+          "font-inter bg-white antialiased text-slate-800 tracking-tight",
+          inter.variable,
+          playfair.variable
+        )}
         suppressHydrationWarning={true}
       >
         {children}

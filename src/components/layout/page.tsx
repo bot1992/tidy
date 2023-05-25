@@ -2,7 +2,6 @@ import { FC, Fragment } from "react"
 import classNames from "classnames"
 
 import PageHero from "./hero"
-// import Padding from "../padding"
 import { Page as PageType } from "@/src/payload-types"
 import ContentGrid from "../blocks/content-grid"
 import Background from "../background"
