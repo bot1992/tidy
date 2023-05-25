@@ -2,21 +2,22 @@ import { DetailedHTMLProps, HTMLAttributes } from "react"
 
 import PageContainer from "./container"
 import Footer from "@components/ui/footer"
-import { fetchFooter, fetchSocialMedia } from "@/src/graphql"
+import { fetchFooter, fetchHeader, fetchSocialMedia } from "@/src/graphql"
 
 type Props = {
   renderFooter?: boolean
 } & DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
 
 const PageLayout = async function ({ renderFooter = true, children }: Props) {
-  const [footer, socialMedia] = await Promise.all([
+  const [header, footer, socialMedia] = await Promise.all([
+    fetchHeader(),
     fetchFooter(),
     fetchSocialMedia(),
   ])
 
   return (
     <>
-      <PageContainer>{children}</PageContainer>
+      <PageContainer header={header}>{children}</PageContainer>
 
       {renderFooter && <Footer {...footer} socialMedia={socialMedia} />}
     </>
