@@ -116,9 +116,8 @@ const Field: FC<RenderFieldProps> = function ({ field, control, isLastField }) {
                 checked={value ?? false}
                 required={required}
                 className={classNames({
-                  "w-full": fieldToRender.type !== "checkbox",
-                  "form-checkbox": fieldToRender.type === "checkbox",
                   "form-input py-2 w-full": fieldToRender.type !== "checkbox",
+                  "form-checkbox": fieldToRender.type === "checkbox",
                   "!border-red-500 focus:!border-red-500": showError,
                 })}
                 onChange={(e) =>

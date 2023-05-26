@@ -2,6 +2,7 @@ import { Inter, Playfair_Display } from "next/font/google"
 import classNames from "classnames"
 
 import "./css/style.css"
+import "@/src/app/css/additional-styles/spacing.scss"
 
 const inter = Inter({
   subsets: ["latin"],

@@ -405,6 +405,7 @@ export interface Page {
           }[];
           contentGridTextSize?: 'small' | 'medium' | 'large';
           contentAlignment?: 'left' | 'center';
+          lineDecoration?: boolean;
           contentGridPadding?: {
             top?:
               | 'none'

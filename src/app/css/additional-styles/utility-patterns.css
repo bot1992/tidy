@@ -234,57 +234,11 @@ body .text-content h6 ~ p {
   @apply bg-slate-300 border-slate-300;
 }
 
-/* Forms */
-.form-input:focus,
-.form-textarea:focus,
-.form-multiselect:focus,
-.form-select:focus,
-.form-checkbox:focus,
-.form-radio:focus {
-  @apply ring-0;
+/* Rich Text */
+.Richtext > * {
+  white-space: pre-wrap;
 }
 
-.form-input,
-.form-textarea,
-.form-multiselect,
-.form-select,
-.form-checkbox,
-.form-radio {
-  @apply bg-transparent !border !border-gray-700 focus:!border-gray-500;
-}
-
-body .form-input,
-body .form-textarea,
-body .form-select {
-  box-shadow: none !important;
-  outline: none !important;
-  background-color: transparent !important;
-}
-
-body .form-checkbox {
-  @apply bg-transparent !ring-white !ring-offset-0 rounded-sm;
-}
-
-.form-input,
-.form-textarea,
-.form-multiselect,
-.form-select,
-.form-checkbox {
-  @apply rounded-sm;
-}
-
-.form-input,
-.form-textarea,
-.form-multiselect,
-.form-select {
-  @apply !py-3 !px-4;
-}
-
-.form-input,
-.form-textarea {
-  @apply placeholder-gray-500;
-}
-
-.form-select {
-  @apply pr-10;
+.Richtext > *:first-child {
+  margin-top: 0;
 }

@@ -1,8 +1,7 @@
 import { FC } from "react"
-
 import classNames from "classnames"
-import Media from "./media"
 
+import Media from "./media"
 import { Page as PageType } from "../payload-types"
 
 type Props = { background: PageType["heroBackground"] }

@@ -23,6 +23,7 @@ const CONTENT_GRID_BLOCK = `
     }
     contentAlignment
     contentGridTextSize
+    lineDecoration
     contentGridPadding ${PADDING_FIELDS}
 }`
 

@@ -1,0 +1,125 @@
+@use "sass:map";
+
+$spacingValues: (
+  "es": (
+    4,
+    4,
+  ),
+  "s": (
+    8,
+    8,
+  ),
+  "sl": (
+    8,
+    12,
+  ),
+  "ms": (
+    12,
+    12,
+  ),
+  "ml": (
+    12,
+    16,
+  ),
+  "ls": (
+    12,
+    20,
+  ),
+  "l": (
+    16,
+    20,
+  ),
+  "els": (
+    32,
+    40,
+  ),
+  "el": (
+    32,
+    40,
+  ),
+);
+
+@each $name, $value in $spacingValues {
+  $def: nth($value, 1);
+  $sm: nth($value, 2);
+
+  // spacing - large
+  @media screen and (min-width: 1024px) {
+    .lg\:mt-#{$name} {
+      margin-top: ($def / 4) + rem;
+    }
+    .lg\:mb-#{$name} {
+      margin-bottom: ($def / 4) + rem;
+    }
+    .lg\:ml-#{$name} {
+      margin-left: ($def / 4) + rem;
+    }
+    .lg\:mr-#{$name} {
+      margin-right: ($def / 4) + rem;
+    }
+  }
+
+  // spacing - medium
+  @if $def > $sm {
+    @media screen and (min-width: 768px) {
+      .mt-#{$name} {
+        margin-top: ($def / 4) + rem;
+      }
+      .mb-#{$name} {
+        margin-bottom: ($def / 4) + rem;
+      }
+      .ml-#{$name} {
+        margin-left: ($def / 4) + rem;
+      }
+      .mr-#{$name} {
+        margin-right: ($def / 4) + rem;
+      }
+    }
+  }
+
+  // spacing - base
+  .mt-#{$name} {
+    margin-top: ($sm / 4) + rem;
+  }
+  .mb-#{$name} {
+    margin-bottom: ($sm / 4) + rem;
+  }
+  .ml-#{$name} {
+    margin-left: ($sm / 4) + rem;
+  }
+  .mr-#{$name} {
+    margin-right: ($sm / 4) + rem;
+  }
+
+  // padding - medium
+  @if $def > $sm {
+    @media screen and (min-width: 768px) {
+      .pt-#{$name} {
+        padding-top: ($def / 4) + rem;
+      }
+      .pb-#{$name} {
+        padding-bottom: ($def / 4) + rem;
+      }
+      .pl-#{$name} {
+        padding-left: ($def / 4) + rem;
+      }
+      .pr-#{$name} {
+        padding-right: ($def / 4) + rem;
+      }
+    }
+  }
+
+  // padding - base
+  .pt-#{$name} {
+    padding-top: ($sm / 4) + rem;
+  }
+  .pb-#{$name} {
+    padding-bottom: ($sm / 4) + rem;
+  }
+  .pl-#{$name} {
+    padding-left: ($sm / 4) + rem;
+  }
+  .pr-#{$name} {
+    padding-right: ($sm / 4) + rem;
+  }
+}

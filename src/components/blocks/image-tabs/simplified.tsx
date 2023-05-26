@@ -110,6 +110,7 @@ const SimplifiedImageTabs: FC<Props> = function ({ tabs }) {
                 mediaProps={{
                   width: 768,
                   height: 474,
+                  className: "mx-auto shadow-2xl",
                 }}
               />
             </Transition>

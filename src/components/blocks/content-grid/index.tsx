@@ -17,6 +17,7 @@ const ContentGrid: FC<Props> = function ({
   contents,
   contentAlignment,
   contentGridTextSize,
+  lineDecoration,
   contentGridPadding,
 }) {
   const textAlignment = {
@@ -30,6 +31,17 @@ const ContentGrid: FC<Props> = function ({
         className="relative max-w-sm mx-auto grid gap-16 md:grid-cols-2 lg:grid-cols-3 lg:gap-y-20 items-start md:max-w-2xl lg:max-w-none"
         data-aos-id-blocks
       >
+        {lineDecoration && (
+          <div
+            className="absolute inset-0 -my-8 md:-my-12 pointer-events-none hidden md:flex"
+            aria-hidden="true"
+          >
+            {new Array(4).fill(null).map(() => (
+              <div className="h-full w-full border-l last:border-r odd:hidden lg:odd:block border-slate-100" />
+            ))}
+          </div>
+        )}
+
         {contents.map(({ id, image, content, heading }, index) => {
           return (
             <div
