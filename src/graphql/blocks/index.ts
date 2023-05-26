@@ -269,7 +269,8 @@ export const CONTENT_BLOCK = `
     }
     layout
     basePadding
-    retract
+    contentMaxWidth
     contentBackground ${BACKGROUND_FIELDS}
     contentPadding ${PADDING_FIELDS}
+    retract
 }`

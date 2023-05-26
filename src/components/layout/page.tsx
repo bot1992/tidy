@@ -2,10 +2,10 @@ import { FC, Fragment } from "react"
 import classNames from "classnames"
 
 import PageHero from "./hero"
-import { Page as PageType } from "@/src/payload-types"
-import ContentGrid from "../blocks/content-grid"
 import Background from "../background"
+import MaxWidth from "../max-width"
 import Padding from "../padding"
+import ContentGrid from "../blocks/content-grid"
 import TextContent from "../blocks/text-content"
 import ImageTabs from "../blocks/image-tabs"
 import Divide from "../blocks/divide"
@@ -21,6 +21,7 @@ import Banner from "../blocks/banner"
 import FaqsList from "../blocks/faqs-list"
 import TestimonialsList from "../blocks/testimonials-list"
 import Spacing from "../blocks/spacing"
+import { Page as PageType } from "@/src/payload-types"
 
 type RenderBlocksProps = { contents: PageType["layout"] }
 
@@ -52,9 +53,10 @@ const RenderBlocks: FC<RenderBlocksProps> = function ({ contents }) {
           layoutBlocks,
           basePadding,
           layout,
-          retract,
+          contentMaxWidth,
           contentBackground,
           contentPadding,
+          retract,
         }) => {
           const hasBlocks =
             !!layoutBlocks &&
@@ -71,8 +73,9 @@ const RenderBlocks: FC<RenderBlocksProps> = function ({ contents }) {
               >
                 <Background background={contentBackground} />
 
-                <div
-                  className={classNames("max-w-6xl mx-auto", {
+                <MaxWidth
+                  maxWidth={contentMaxWidth}
+                  className={classNames("mx-auto", {
                     "px-4 sm:px-6": basePadding,
                     "px-0": !basePadding,
                   })}
@@ -94,7 +97,7 @@ const RenderBlocks: FC<RenderBlocksProps> = function ({ contents }) {
                       )
                     })}
                   </Padding>
-                </div>
+                </MaxWidth>
               </section>
             )
           }
