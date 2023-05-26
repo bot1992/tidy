@@ -2,9 +2,9 @@
 
 import { FC, useState } from "react"
 
+import RichText from "@components/rich-text"
+import CallToAction from "@components/call-to-action"
 import { Page as PageType } from "@/src/payload-types"
-import RichText from "../../rich-text"
-import CallToAction from "../../call-to-action"
 
 type Props = Extract<
   Extract<PageType["layout"][0], { blockType: "content" }>["layoutBlocks"][0],

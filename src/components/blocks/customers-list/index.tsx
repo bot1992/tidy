@@ -2,9 +2,9 @@
 
 import { FC } from "react"
 
-import { Page as PageType } from "@/src/payload-types"
 import Media from "@components/media"
 import Padding from "@components/padding"
+import { Page as PageType } from "@/src/payload-types"
 
 type Props = Extract<
   Extract<PageType["layout"][0], { blockType: "content" }>["layoutBlocks"][0],
@@ -61,7 +61,7 @@ const CustomersList: FC<Props> = function ({
           className="flex flex-wrap items-center justify-center -m-4 md:-m-8"
           data-aos-id-clients
         >
-          {customers.map((customer) => {
+          {customers.map((customer, index) => {
             if (typeof customer === "string") return null
 
             const { id, name, logo } = customer
@@ -72,6 +72,7 @@ const CustomersList: FC<Props> = function ({
                 className="m-4 md:m-8"
                 data-aos="fade-up"
                 data-aos-anchor="[data-aos-id-clients]"
+                data-aos-delay={index * 100}
               >
                 {/* <svg
                   className="fill-slate-400"

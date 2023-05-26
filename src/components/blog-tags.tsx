@@ -8,28 +8,37 @@ type Props = {
 }
 
 const BlogTags: FC<Props> = function ({ categories }) {
+  const handleClick = function (category: string) {
+    const className = category.toLowerCase().replace(/\s/, "-")
+
+    document
+      .querySelector(`.${className}-posts`)
+      ?.scrollIntoView({ behavior: "smooth" })
+  }
+
   return (
     <section>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="w-full flex items-center justify-between space-x-10 overflow-x-scroll no-scrollbar py-5 border-b border-slate-100">
           <div className="w-full flex items-center justify-between space-x-10">
             <ul className="flex md:flex-wrap -mx-5 -my-2">
-              {categories.map((category) => (
-                <li className="mx-5 my-2">
+              <li className="mx-5 my-2">
+                <button
+                  className="font-medium whitespace-nowrap text-blue-600"
+                  onClick={() => handleClick("Latest")}
+                >
+                  Latest
+                </button>
+              </li>
+
+              {categories.map((category, index) => (
+                <li key={index} className="mx-5 my-2">
                   <button
                     className={classNames(
                       "font-medium whitespace-nowrap text-slate-500 transition duration-150 ease-in-out",
                       "hover:text-slate-600"
                     )}
-                    onClick={() => {
-                      const className = category
-                        .toLowerCase()
-                        .replace(/\s/, "-")
-
-                      document
-                        .querySelector(`.${className}-posts`)
-                        ?.scrollIntoView({ behavior: "smooth" })
-                    }}
+                    onClick={() => handleClick(category)}
                   >
                     {category}
                   </button>

@@ -1,4 +1,3 @@
-// import { allPosts } from "contentlayer/generated"
 import Link from "next/link"
 import PostDate from "@components/post-date"
 import PostItem from "@components/post-item"
@@ -51,7 +50,7 @@ export default async function Blog() {
   return (
     <>
       <Hero />
-      <Tags categories={postCategories.map((category) => category.name)} />
+      <Tags categories={[...postCategories.map((category) => category.name)]} />
 
       {/* Featured article */}
       <section>
@@ -163,7 +162,7 @@ export default async function Blog() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="py-8 md:py-16 space-y-16">
             {/* Latest */}
-            <div>
+            <div className="latest-posts">
               <h2 className="h3 font-playfair-display text-center md:text-left mb-8">
                 Latest
               </h2>

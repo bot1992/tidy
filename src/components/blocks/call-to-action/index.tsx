@@ -2,9 +2,9 @@
 
 import { FC } from "react"
 
-import { Page as PageType } from "@/src/payload-types"
 import Padding from "@components/padding"
-import CallToAction from "../../call-to-action"
+import CallToAction from "@components/call-to-action"
+import { Page as PageType } from "@/src/payload-types"
 
 type Props = Extract<
   Extract<PageType["layout"][0], { blockType: "content" }>["layoutBlocks"][0],

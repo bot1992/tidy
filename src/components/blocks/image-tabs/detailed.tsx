@@ -2,12 +2,12 @@
 
 import { FC, useEffect, useRef, useState } from "react"
 import { Transition } from "@headlessui/react"
+import classNames from "classnames"
 
-import { Page as PageType } from "@/src/payload-types"
 import Media from "@components/media"
 import Padding from "@components/padding"
-import classNames from "classnames"
-import RichText from "../../rich-text"
+import RichText from "@components/rich-text"
+import { Page as PageType } from "@/src/payload-types"
 
 type Props = Extract<
   Extract<PageType["layout"][0], { blockType: "content" }>["layoutBlocks"][0],
@@ -145,7 +145,7 @@ const DetailedImageTabs: FC<Props> = function ({ tabs, leadText }) {
                 content={controlText}
                 attributes={{
                   p: {
-                    className: "flex flex-col items-start text-slate-500",
+                    className: "flex flex-col items-start gap-1 text-slate-500",
                   },
                 }}
               />

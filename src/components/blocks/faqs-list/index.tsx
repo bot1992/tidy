@@ -2,10 +2,10 @@
 
 import { FC } from "react"
 
-import { Page as PageType } from "@/src/payload-types"
 import Padding from "@components/padding"
-import Accordion from "../../utils/accordion"
-import RichText from "../../rich-text"
+import RichText from "@components/rich-text"
+import Accordion from "@components/utils/accordion"
+import { Page as PageType } from "@/src/payload-types"
 
 type Props = Extract<
   Extract<PageType["layout"][0], { blockType: "content" }>["layoutBlocks"][0],

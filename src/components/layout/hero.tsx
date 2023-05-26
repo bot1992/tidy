@@ -3,14 +3,14 @@
 import { FC, useState } from "react"
 import classNames from "classnames"
 
-import Modal from "@components/utils/modal"
-import RichText from "@components/rich-text"
-import Media from "@components/media"
+import Media from "..//media"
+import RichText from "../rich-text"
 import CallToAction from "../call-to-action"
 import Padding from "../padding"
 import MaxWidth from "../max-width"
-import { Page as PageType } from "@/src/payload-types"
 import Background from "../background"
+import Modal from "../utils/modal"
+import { Page as PageType } from "@/src/payload-types"
 
 const PageHero: FC<PageType> = ({
   heroType,

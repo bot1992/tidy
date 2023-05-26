@@ -143,6 +143,27 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 /* Text Content */
+.text-content .w-1\/4,
+.text-content .w-1\/2,
+.text-content .w-3\/4,
+.text-content .w-1 {
+  width: 100%;
+}
+
+@media screen and (min-width: 1024px) {
+  .text-content .w-3\/4 {
+    width: 75%;
+  }
+
+  .text-content .w-1\/2 {
+    width: 50%;
+  }
+
+  .text-content .w-1\/4 {
+    width: 25%;
+  }
+}
+
 .text-content p {
   @apply text-slate-500 mt-0;
 }
@@ -160,6 +181,15 @@ input[type="search"]::-webkit-search-results-decoration {
   @apply font-playfair-display text-slate-800;
 }
 
+body .text-content h1 ~ p,
+body .text-content h2 ~ p,
+body .text-content h3 ~ p,
+body .text-content h4 ~ p,
+body .text-content h5 ~ p,
+body .text-content h6 ~ p {
+  @apply mt-4;
+}
+
 .bg-dark ~ div h1,
 .bg-dark ~ div h2,
 .bg-dark ~ div h3,
@@ -171,15 +201,6 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .bg-dark ~ div p {
   @apply text-slate-400;
-}
-
-body .text-content h1 ~ p,
-body .text-content h2 ~ p,
-body .text-content h3 ~ p,
-body .text-content h4 ~ p,
-body .text-content h5 ~ p,
-body .text-content h6 ~ p {
-  @apply mt-4;
 }
 
 /* Image Tabs */

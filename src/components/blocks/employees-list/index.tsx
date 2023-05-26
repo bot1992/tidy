@@ -2,9 +2,9 @@
 
 import { FC } from "react"
 
-import { Page as PageType } from "@/src/payload-types"
 import Media from "@components/media"
 import Padding from "@components/padding"
+import { Page as PageType } from "@/src/payload-types"
 
 type Props = Extract<
   Extract<PageType["layout"][0], { blockType: "content" }>["layoutBlocks"][0],
@@ -21,7 +21,7 @@ const EmployeesList: FC<Props> = function ({
         className="relative max-w-sm mx-auto grid gap-y-12 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-y-20 items-start sm:max-w-xl lg:max-w-none"
         data-aos-id-team
       >
-        {employees.map((employee) => {
+        {employees.map((employee, index) => {
           if (typeof employee === "string") return null
 
           const { id, image, name, role } = employee
@@ -32,6 +32,7 @@ const EmployeesList: FC<Props> = function ({
               className="text-center"
               data-aos="fade-up"
               data-aos-anchor="[data-aos-id-team]"
+              data-aos-delay={index * 100}
             >
               <div className="inline-flex mb-4">
                 {/* <Image

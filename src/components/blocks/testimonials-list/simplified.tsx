@@ -2,9 +2,9 @@
 
 import { FC } from "react"
 
-import { Page as PageType } from "@/src/payload-types"
 import Media from "@components/media"
-import RichText from "../../rich-text"
+import RichText from "@components/rich-text"
+import { Page as PageType } from "@/src/payload-types"
 
 type Props = Extract<
   Extract<PageType["layout"][0], { blockType: "content" }>["layoutBlocks"][0],

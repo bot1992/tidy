@@ -2,8 +2,8 @@
 
 import { FC } from "react"
 
-import { Page as PageType } from "@/src/payload-types"
 import Tooltip from "@components/utils/tooltip"
+import { Page as PageType } from "@/src/payload-types"
 
 type Props = Extract<
   Extract<PageType["layout"][0], { blockType: "content" }>["layoutBlocks"][0],

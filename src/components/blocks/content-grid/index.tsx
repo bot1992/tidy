@@ -3,10 +3,10 @@
 import { FC } from "react"
 import classNames from "classnames"
 
-import { Page as PageType } from "@/src/payload-types"
 import Media from "@components/media"
 import Padding from "@components/padding"
-import RichText from "../rich-text"
+import RichText from "@components/rich-text"
+import { Page as PageType } from "@/src/payload-types"
 
 type Props = Extract<
   Extract<PageType["layout"][0], { blockType: "content" }>["layoutBlocks"][0],
@@ -30,7 +30,7 @@ const ContentGrid: FC<Props> = function ({
         className="relative max-w-sm mx-auto grid gap-16 md:grid-cols-2 lg:grid-cols-3 lg:gap-y-20 items-start md:max-w-2xl lg:max-w-none"
         data-aos-id-blocks
       >
-        {contents.map(({ id, image, content, heading }) => {
+        {contents.map(({ id, image, content, heading }, index) => {
           return (
             <div
               key={id}
@@ -40,6 +40,7 @@ const ContentGrid: FC<Props> = function ({
               })}
               data-aos="fade-up"
               data-aos-anchor="[data-aos-id-blocks]"
+              data-aos-delay={index * 100}
             >
               {image && (
                 <Media

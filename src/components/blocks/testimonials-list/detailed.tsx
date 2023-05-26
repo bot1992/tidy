@@ -1,13 +1,13 @@
 "use client"
 
 import { FC, useState } from "react"
+import Link from "next/link"
 import classNames from "classnames"
 
 import Media from "@components/media"
-import RichText from "../../rich-text"
+import RichText from "@components/rich-text"
+import Modal from "@components/utils/modal"
 import { Page as PageType } from "@/src/payload-types"
-import Modal from "../../utils/modal"
-import Link from "next/link"
 
 type Props = Extract<
   Extract<PageType["layout"][0], { blockType: "content" }>["layoutBlocks"][0],

@@ -2,10 +2,10 @@
 
 import { FC } from "react"
 
-import { Page as PageType } from "@/src/payload-types"
-import Padding from "../../padding"
 import DetailedTestimonialsList from "./detailed"
 import SimplifiedTestimonialsList from "./simplified"
+import Padding from "@components/padding"
+import { Page as PageType } from "@/src/payload-types"
 
 type Props = Extract<
   Extract<PageType["layout"][0], { blockType: "content" }>["layoutBlocks"][0],

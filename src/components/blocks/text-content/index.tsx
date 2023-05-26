@@ -1,12 +1,12 @@
 "use client"
 
 import { FC } from "react"
-
-import { Page as PageType } from "@/src/payload-types"
-import Padding from "@components/padding"
-import RichText from "../rich-text"
-import MaxWidth from "../max-width"
 import classNames from "classnames"
+
+import Padding from "@components/padding"
+import RichText from "@components/rich-text"
+import MaxWidth from "@components/max-width"
+import { Page as PageType } from "@/src/payload-types"
 
 type Props = Extract<
   Extract<PageType["layout"][0], { blockType: "content" }>["layoutBlocks"][0],
@@ -33,6 +33,10 @@ const TextContent: FC<Props> = function ({
         className={classNames("relative", {
           "ml-auto mr-0": contentPlacement === "right",
           "mr-auto ml-0": contentPlacement === "left",
+          "w-3/4": width === "threeQuarter",
+          "w-1/2": width === "half",
+          "w-1/4": width === "oneQuarter",
+          "w-1": width === "full",
         })}
       >
         {decoration && (
