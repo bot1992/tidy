@@ -23,13 +23,12 @@ query Page($slug: String) {
       title
       heroType
       heroContent
-      heroHeadingStyle
       heroMediaType
       heroMedia ${MEDIA_FIELDS}
       heroVideoThumbnail ${MEDIA_FIELDS}
       heroBackground ${BACKGROUND_FIELDS}
       heroCallToAction ${CALL_TO_ACTION_FIELDS}
-      heroImageDecoration
+      heroMediaDecoration
       heroPadding ${PADDING_FIELDS}
       heroMaxWidth
       layout {

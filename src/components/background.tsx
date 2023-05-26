@@ -1,7 +1,9 @@
 import { FC } from "react"
-import { Page as PageType } from "../payload-types"
+
 import classNames from "classnames"
 import Media from "./media"
+
+import { Page as PageType } from "../payload-types"
 
 type Props = { background: PageType["heroBackground"] }
 
@@ -23,10 +25,11 @@ const Background: FC<Props> = ({ background }) => {
         "min-h-[85vh] lg:min-h-fit lg:h-[48rem] mb-36 lg:mb-0":
           height === "overflowLarge",
         // fill
-        "[clip-path:polygon(0_0,_5760px_0,_5760px_calc(100%_-_352px),_0_100%)]":
-          type === "clipped",
         "bg-dark bg-slate-900": color === "darkSlate" || !!image,
         "bg-slate-100": isColorFilled && color === "lightSlate",
+        "bg-white": isColorFilled && color === "white",
+        "[clip-path:polygon(0_0,_5760px_0,_5760px_calc(100%_-_352px),_0_100%)]":
+          type === "clipped",
       })}
     >
       {image && (

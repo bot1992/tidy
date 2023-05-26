@@ -20,9 +20,8 @@ const PageHero: FC<PageType> = ({
   heroMedia,
   heroVideoThumbnail,
   heroContent,
-  heroHeadingStyle,
   heroCallToAction,
-  heroImageDecoration,
+  heroMediaDecoration,
   heroPadding,
 }) => {
   const [videoModalOpen, setVideoModalOpen] = useState(false)
@@ -33,12 +32,35 @@ const PageHero: FC<PageType> = ({
       ? "column"
       : "row"
   const alignment = layout === "column" ? "justify-center" : "justify-between"
-  const headingClassName =
-    heroHeadingStyle === "serif" ? "font-playfair-display" : "font-inter"
+
+  const text = (
+    <RichText
+      content={heroContent}
+      attributes={{
+        h1: {
+          className: classNames("font-playfair-display", {
+            "text-slate-100": heroBackground?.color === "darkSlate",
+            "text-slate-800": heroBackground?.color !== "darkSlate",
+          }),
+        },
+        p: {
+          className: classNames(
+            "text-xl text-slate-400",
+            (heroContent?.length ?? 0) >= 1 ? "mt-4" : ""
+          ),
+        },
+      }}
+    />
+  )
+
+  const callToAction = (heroCallToAction?.length ?? 0) >= 1 && (
+    <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4 mt-8">
+      <CallToAction callToAction={heroCallToAction} />
+    </div>
+  )
 
   return (
     <section className="hero relative">
-      {/* Dark background */}
       <Background background={heroBackground} />
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
@@ -47,39 +69,25 @@ const PageHero: FC<PageType> = ({
             {heroType === "minimal" ? (
               <div
                 className={classNames(
-                  "flex",
+                  "hero-minimal max-w-3xl flex",
                   layout,
                   alignment,
-                  "max-w-3xl mx-auto text-center"
+                  "mx-auto text-center"
                 )}
               >
-                <RichText
-                  content={heroContent}
-                  attributes={{
-                    h1: {
-                      className: classNames(
-                        "font-playfair-display text-slate-100",
-                        headingClassName
-                      ),
-                    },
-                    p: {
-                      className: classNames(
-                        "text-xl text-slate-400",
-                        (heroContent?.length ?? 0) >= 1 ? "mt-4" : ""
-                      ),
-                    },
-                  }}
-                />
+                {text}
+
+                {callToAction}
               </div>
             ) : (
               <>
                 {/* Hero content */}
                 <div
                   className={classNames(
-                    "flex",
+                    "w-full flex",
                     layout,
                     alignment,
-                    "w-full mx-auto"
+                    "mx-auto"
                   )}
                 >
                   {/* Content */}
@@ -87,29 +95,9 @@ const PageHero: FC<PageType> = ({
                     className="max-w-3xl text-center md:text-left md:min-w-[30rem] mx-auto"
                     data-aos="fade-right"
                   >
-                    <RichText
-                      content={heroContent}
-                      attributes={{
-                        h1: {
-                          className: classNames(
-                            "font-playfair-display text-slate-100",
-                            headingClassName
-                          ),
-                        },
-                        p: {
-                          className: classNames(
-                            "text-xl text-slate-400",
-                            (heroContent?.length ?? 0) >= 1 ? "mt-4" : ""
-                          ),
-                        },
-                      }}
-                    />
+                    {text}
 
-                    {(heroCallToAction?.length ?? 0) >= 1 && (
-                      <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4 mt-8">
-                        <CallToAction callToAction={heroCallToAction} />
-                      </div>
-                    )}
+                    {callToAction}
                   </div>
 
                   {/* Hero image */}
@@ -141,7 +129,7 @@ const PageHero: FC<PageType> = ({
                       {/* Image */}
                       <div className="w-full flex justify-center items-center">
                         <div className="relative w-full">
-                          {heroImageDecoration && (
+                          {heroMediaDecoration && (
                             <div
                               className="absolute inset-0 pointer-events-none border-2 border-slate-700 mt-3 ml-3 translate-x-4 translate-y-4 -z-10"
                               aria-hidden="true"

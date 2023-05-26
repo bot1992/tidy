@@ -1,7 +1,15 @@
 import { MEDIA_FIELDS } from "../collections/media"
 import { BACKGROUND_FIELDS } from "../fields/background"
 import { CALL_TO_ACTION_FIELDS } from "../fields/call-to-action"
+import { FORM_FIELDS } from "../fields/form"
 import { PADDING_FIELDS } from "../fields/padding"
+
+export const FORM_BLOCK = `
+...on FormBlock {
+    id
+    blockType
+    form ${FORM_FIELDS}
+}`
 
 const CONTENT_GRID_BLOCK = `
 ...on ContentGrid {
@@ -250,6 +258,7 @@ export const CONTENT_BLOCK = `
 ...on Content {
     id
     layoutBlocks {
+        ${FORM_BLOCK}
         ${SPACING_BLOCK}
         ${DIVIDE_BLOCK}
         ${MEDIA_BLOCK}

@@ -1,8 +1,8 @@
 "use client"
 
 import { useState, useRef, useEffect, FC } from "react"
-import { Transition } from "@headlessui/react"
 import NextLink from "next/link"
+import { Transition } from "@headlessui/react"
 import classNames from "classnames"
 
 import { Header as HeaderType } from "@/src/payload-types"

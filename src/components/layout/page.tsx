@@ -22,6 +22,7 @@ import FaqsList from "../blocks/faqs-list"
 import TestimonialsList from "../blocks/testimonials-list"
 import Spacing from "../blocks/spacing"
 import { Page as PageType } from "@/src/payload-types"
+import Form from "../blocks/form"
 
 type RenderBlocksProps = { contents: PageType["layout"] }
 
@@ -42,6 +43,7 @@ const blockComponents: { [key: string]: FC<any> } = {
   banner: Banner,
   "faqs-list": FaqsList,
   "testimonials-list": TestimonialsList,
+  "form-block": Form,
 }
 
 const RenderBlocks: FC<RenderBlocksProps> = function ({ contents }) {
