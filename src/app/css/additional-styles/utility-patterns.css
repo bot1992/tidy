@@ -219,6 +219,10 @@ body .text-content h6 ~ p {
   @apply font-medium text-slate-800;
 }
 
+.image-tabs .simplified strong {
+  @apply font-semibold;
+}
+
 /* Banner */
 .banner h1,
 .banner h2,
