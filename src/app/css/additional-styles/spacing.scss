@@ -1,6 +1,10 @@
 @use "sass:map";
 
 $spacingValues: (
+  "none": (
+    0,
+    0,
+  ),
   "es": (
     4,
     4,
@@ -40,8 +44,42 @@ $spacingValues: (
 );
 
 @each $name, $value in $spacingValues {
-  $def: nth($value, 1);
-  $sm: nth($value, 2);
+  $sm: nth($value, 1);
+  $def: nth($value, 2);
+
+  @if $name != "none" {
+    // spacing - base
+    .mt-#{$name} {
+      margin-top: ($sm / 4) + rem;
+    }
+    .mb-#{$name} {
+      margin-bottom: ($sm / 4) + rem;
+    }
+    .ml-#{$name} {
+      margin-left: ($sm / 4) + rem;
+    }
+    .mr-#{$name} {
+      margin-right: ($sm / 4) + rem;
+    }
+
+    // spacing - medium
+    @if $def > $sm {
+      @media screen and (min-width: 768px) {
+        .mt-#{$name} {
+          margin-top: ($def / 4) + rem;
+        }
+        .mb-#{$name} {
+          margin-bottom: ($def / 4) + rem;
+        }
+        .ml-#{$name} {
+          margin-left: ($def / 4) + rem;
+        }
+        .mr-#{$name} {
+          margin-right: ($def / 4) + rem;
+        }
+      }
+    }
+  }
 
   // spacing - large
   @media screen and (min-width: 1024px) {
@@ -59,67 +97,37 @@ $spacingValues: (
     }
   }
 
-  // spacing - medium
-  @if $def > $sm {
-    @media screen and (min-width: 768px) {
-      .mt-#{$name} {
-        margin-top: ($def / 4) + rem;
-      }
-      .mb-#{$name} {
-        margin-bottom: ($def / 4) + rem;
-      }
-      .ml-#{$name} {
-        margin-left: ($def / 4) + rem;
-      }
-      .mr-#{$name} {
-        margin-right: ($def / 4) + rem;
+  @if $name != "none" {
+    // padding - base
+    .pt-#{$name} {
+      padding-top: ($sm / 4) + rem;
+    }
+    .pb-#{$name} {
+      padding-bottom: ($sm / 4) + rem;
+    }
+    .pl-#{$name} {
+      padding-left: ($sm / 4) + rem;
+    }
+    .pr-#{$name} {
+      padding-right: ($sm / 4) + rem;
+    }
+
+    // padding - medium
+    @if $def > $sm {
+      @media screen and (min-width: 768px) {
+        .pt-#{$name} {
+          padding-top: ($def / 4) + rem;
+        }
+        .pb-#{$name} {
+          padding-bottom: ($def / 4) + rem;
+        }
+        .pl-#{$name} {
+          padding-left: ($def / 4) + rem;
+        }
+        .pr-#{$name} {
+          padding-right: ($def / 4) + rem;
+        }
       }
     }
-  }
-
-  // spacing - base
-  .mt-#{$name} {
-    margin-top: ($sm / 4) + rem;
-  }
-  .mb-#{$name} {
-    margin-bottom: ($sm / 4) + rem;
-  }
-  .ml-#{$name} {
-    margin-left: ($sm / 4) + rem;
-  }
-  .mr-#{$name} {
-    margin-right: ($sm / 4) + rem;
-  }
-
-  // padding - medium
-  @if $def > $sm {
-    @media screen and (min-width: 768px) {
-      .pt-#{$name} {
-        padding-top: ($def / 4) + rem;
-      }
-      .pb-#{$name} {
-        padding-bottom: ($def / 4) + rem;
-      }
-      .pl-#{$name} {
-        padding-left: ($def / 4) + rem;
-      }
-      .pr-#{$name} {
-        padding-right: ($def / 4) + rem;
-      }
-    }
-  }
-
-  // padding - base
-  .pt-#{$name} {
-    padding-top: ($sm / 4) + rem;
-  }
-  .pb-#{$name} {
-    padding-bottom: ($sm / 4) + rem;
-  }
-  .pl-#{$name} {
-    padding-left: ($sm / 4) + rem;
-  }
-  .pr-#{$name} {
-    padding-right: ($sm / 4) + rem;
   }
 }

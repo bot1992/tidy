@@ -3,8 +3,8 @@ import classNames from "classnames"
 import { Control, Controller, FieldValues } from "react-hook-form"
 
 import { Unpacked } from "@/src/types"
-import { Form as FormType } from "@/src/payload-types"
 import reduceFraction from "@/src/utils/reduce-fraction"
+import { Form as FormType } from "@/src/payload-types"
 
 type FieldType = Unpacked<FormType["fields"]>
 

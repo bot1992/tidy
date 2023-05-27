@@ -37,8 +37,6 @@ const Form: FC<Props> = ({ form }) => {
   const formId = form?.id
   const fields = form?.fields ?? []
 
-  console.log("form fields: ", fields)
-
   const schema: { [key: string]: any } = {}
   fields.forEach((field: any) => {
     schema[field.name] = getFieldSchema(field)

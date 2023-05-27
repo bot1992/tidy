@@ -16,10 +16,8 @@ const Spacing: FC<Props> = function ({ spacing }) {
     left: spacing?.horizontal ?? "",
   }
 
-  const largeTopSpacing =
-    top.large !== "none" ? `lg:mt-${spacingValues?.[top.large]}` : ""
-  const largeLeftSpacing =
-    left.large !== "none" ? `lg:ml-${spacingValues?.[left.large]}` : ""
+  const largeTopSpacing = `lg:mt-${spacingValues?.[top.large]}`
+  const largeLeftSpacing = `lg:ml-${spacingValues?.[left.large]}`
   const smallTopSpacing =
     top.small !== "none" ? `mt-${spacingValues?.[top.small]}` : ""
   const smallLeftSpacing =
@@ -28,10 +26,12 @@ const Spacing: FC<Props> = function ({ spacing }) {
   return (
     <div
       className={classNames(
-        largeTopSpacing,
-        largeLeftSpacing,
-        smallTopSpacing,
-        smallLeftSpacing
+        top.large === top.small
+          ? smallTopSpacing
+          : [largeTopSpacing, smallTopSpacing],
+        left.large === left.small
+          ? smallLeftSpacing
+          : [largeLeftSpacing, smallLeftSpacing]
       )}
     />
   )
