@@ -10,13 +10,7 @@ type Props = {
   padding: Partial<Required<PageType["heroPadding"]>>
 } & DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
 
-const Padding: FC<Props> = ({
-  padding,
-  className,
-  style,
-  children,
-  ...props
-}) => {
+const Padding: FC<Props> = ({ padding, className, children, ...props }) => {
   const { top, bottom, left, right } = {
     top: padding?.top ?? "",
     bottom: padding?.bottom ?? "",

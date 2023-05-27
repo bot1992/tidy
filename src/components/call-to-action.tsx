@@ -32,18 +32,16 @@ const CallToAction: FC<Props> = function ({ callToAction, ...props }) {
                 "btn-sm": isFirstSmall,
                 btn: !isFirstSmall,
               },
-              "btn text-white bg-blue-600 hover:bg-blue-700 w-full group"
+              "text-white bg-blue-600 hover:bg-blue-700 w-full group"
             )}
           >
-            <span className={isFirstSmall ? "text-sm" : ""}>
-              {firstAction?.link?.label}
+            {firstAction?.link?.label}
 
-              {firstAction.appendArrow && (
-                <span className="tracking-normal text-blue-300 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">
-                  -&gt;
-                </span>
-              )}
-            </span>
+            {firstAction.appendArrow && (
+              <span className="tracking-normal text-blue-300 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">
+                -&gt;
+              </span>
+            )}
           </Link>
         </div>
       )}
@@ -54,21 +52,19 @@ const CallToAction: FC<Props> = function ({ callToAction, ...props }) {
             {...secondAction.link}
             className={classNames(
               {
-                "btn-sm": secondAction.size === "small",
-                btn: secondAction.size !== "small",
+                "btn-sm": isSecondSmall,
+                btn: !isSecondSmall,
               },
-              "btn text-white bg-slate-700 hover:bg-slate-800 w-full"
+              "text-white bg-slate-700 hover:bg-slate-800 w-full"
             )}
           >
-            <span className={isSecondSmall ? "text-sm" : ""}>
-              {secondAction?.link?.label}
+            {secondAction?.link?.label}
 
-              {secondAction.appendArrow && (
-                <span className="tracking-normal text-blue-300 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">
-                  -&gt;
-                </span>
-              )}
-            </span>
+            {secondAction.appendArrow && (
+              <span className="tracking-normal text-blue-300 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">
+                -&gt;
+              </span>
+            )}
           </Link>
         </div>
       )}

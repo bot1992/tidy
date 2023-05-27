@@ -19,7 +19,7 @@ const serialize = (
   addBaseClassNames?: boolean
 ): (React.ReactElement | null)[] => {
   try {
-    return (children ?? []).map((node: any, i) => {
+    return (children ?? []).map((node: any, index) => {
       if (Text.isText(node)) {
         let text = (
           <span dangerouslySetInnerHTML={{ __html: escapeHTML(node.text) }} />
@@ -38,20 +38,20 @@ const serialize = (
         }
 
         if ((node as any)?.bold) {
-          text = <strong key={i}>{text}</strong>
+          text = <strong key={index}>{text}</strong>
         }
 
         if ((node as any).code) {
-          text = <code key={i}>{text}</code>
+          text = <code key={index}>{text}</code>
         }
 
         if ((node as any).italic) {
-          text = <em key={i}>{text}</em>
+          text = <em key={index}>{text}</em>
         }
 
         if ((node as any).underline) {
           text = (
-            <span style={{ textDecoration: "underline" }} key={i}>
+            <span style={{ textDecoration: "underline" }} key={index}>
               {text}
             </span>
           )
@@ -59,13 +59,13 @@ const serialize = (
 
         if ((node as any).strikethrough) {
           text = (
-            <span style={{ textDecoration: "line-through" }} key={i}>
+            <span style={{ textDecoration: "line-through" }} key={index}>
               {text}
             </span>
           )
         }
 
-        return <Fragment key={i}>{text}</Fragment>
+        return <Fragment key={index}>{text}</Fragment>
       }
 
       if (!node) {
@@ -88,7 +88,7 @@ const serialize = (
         case "h1":
           return (
             <h1
-              key={i}
+              key={index}
               className={classNames(
                 addBaseClassNames ? "h1" : "",
                 mergedClassName
@@ -101,7 +101,7 @@ const serialize = (
         case "h2":
           return (
             <h2
-              key={i}
+              key={index}
               className={classNames(
                 addBaseClassNames ? "h2" : "",
                 mergedClassName
@@ -114,7 +114,7 @@ const serialize = (
         case "h3":
           return (
             <h3
-              key={i}
+              key={index}
               className={classNames(
                 addBaseClassNames ? "h3" : "",
                 mergedClassName
@@ -127,7 +127,7 @@ const serialize = (
         case "h4":
           return (
             <h4
-              key={i}
+              key={index}
               className={classNames(
                 addBaseClassNames ? "h4" : "",
                 mergedClassName
@@ -140,7 +140,7 @@ const serialize = (
         case "h5":
           return (
             <h5
-              key={i}
+              key={index}
               className={classNames(
                 addBaseClassNames ? "h5" : "",
                 mergedClassName
@@ -153,7 +153,7 @@ const serialize = (
         case "h6":
           return (
             <h6
-              key={i}
+              key={index}
               className={classNames(
                 addBaseClassNames ? "h6" : "",
                 mergedClassName
@@ -165,25 +165,25 @@ const serialize = (
           )
         case "blockquote":
           return (
-            <blockquote key={i} className={mergedClassName} {...restProps}>
+            <blockquote key={index} className={mergedClassName} {...restProps}>
               {serialize(node.children)}
             </blockquote>
           )
         case "ul":
           return (
-            <ul key={i} className={mergedClassName} {...restProps}>
+            <ul key={index} className={mergedClassName} {...restProps}>
               {serialize(node.children)}
             </ul>
           )
         case "ol":
           return (
-            <ol key={i} className={mergedClassName} {...restProps}>
+            <ol key={index} className={mergedClassName} {...restProps}>
               {serialize(node.children)}
             </ol>
           )
         case "li":
           return (
-            <li key={i} className={mergedClassName} {...restProps}>
+            <li key={index} className={mergedClassName} {...restProps}>
               {serialize(node.children)}
             </li>
           )
@@ -191,7 +191,7 @@ const serialize = (
           return (
             <a
               href={escapeHTML(node.url)}
-              key={i}
+              key={index}
               className={mergedClassName}
               {...restProps}
             >
@@ -200,11 +200,11 @@ const serialize = (
           )
 
         case "hr":
-          return <hr key={i} className={mergedClassName} {...restProps} />
+          return <hr key={index} className={mergedClassName} {...restProps} />
 
         default:
           return (
-            <p key={i} className={mergedClassName} {...restProps}>
+            <p key={index} className={mergedClassName} {...restProps}>
               {serialize(node.children)}
             </p>
           )

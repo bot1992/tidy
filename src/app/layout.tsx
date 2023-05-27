@@ -7,13 +7,13 @@ import classNames from "classnames"
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
-  display: "swap",
+  display: "auto",
 })
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair-display",
-  display: "swap",
+  display: "auto",
 })
 
 export default async function RootLayout({
