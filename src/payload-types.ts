@@ -1272,7 +1272,7 @@ export interface PricingPlan {
     appendArrow?: boolean;
     id?: string;
   }[];
-  mostPopular?: boolean;
+  tag?: string;
   coreFeatures: {
     feature?: string;
     id?: string;

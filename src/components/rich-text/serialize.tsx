@@ -4,7 +4,7 @@ import escapeHTML from "escape-html"
 import { Text } from "slate"
 import classNames from "classnames"
 
-import mergeDeep from "@/src/utils/deep-merge"
+import deepMerge from "@/src/utils/deep-merge"
 
 export type AttributesType = {
   [key: string]: Omit<
@@ -77,7 +77,7 @@ const serialize = (
         attributes?.[node?.type ?? "p"]?.className ?? ""
       )
 
-      const props = mergeDeep({
+      const props = deepMerge({
         target: attributes?.shared ?? {},
         sources: [attributes?.[node?.type ?? "p"] ?? {}],
       })

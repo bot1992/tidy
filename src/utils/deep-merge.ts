@@ -1,7 +1,7 @@
 const isObject = (item: Object) => {
   return item && typeof item === "object" && !Array.isArray(item)
 }
-const mergeDeep = ({
+const deepMerge = ({
   target,
   sources,
 }: {
@@ -18,7 +18,7 @@ const mergeDeep = ({
           Object.assign(target, {
             [key]: {},
           })
-        mergeDeep({ target: target[key], sources: [source[key]] })
+        deepMerge({ target: target[key], sources: [source[key]] })
       } else {
         Object.assign(target, {
           [key]: source[key],
@@ -27,7 +27,7 @@ const mergeDeep = ({
     }
   }
 
-  return mergeDeep({ target, sources })
+  return deepMerge({ target, sources })
 }
 
-export default mergeDeep
+export default deepMerge

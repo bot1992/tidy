@@ -59,7 +59,7 @@ const SimplifiedPricingTables: FC<Props> = function ({
             description,
             price,
             callToAction,
-            mostPopular,
+            tag,
             featuresListText,
             coreFeatures,
           } = pricingPlan
@@ -70,10 +70,10 @@ const SimplifiedPricingTables: FC<Props> = function ({
               className="relative flex flex-col h-full px-6 py-5 bg-white shadow-lg"
               data-aos="fade-up"
             >
-              {mostPopular && (
+              {tag && (
                 <div className="absolute top-0 right-0 mr-6 -mt-4">
                   <div className="inline-flex text-sm font-semibold py-1 px-3 text-emerald-700 bg-emerald-200 rounded-full">
-                    Most Popular
+                    {tag}
                   </div>
                 </div>
               )}

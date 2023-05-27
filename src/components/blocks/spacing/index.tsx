@@ -26,6 +26,7 @@ const Spacing: FC<Props> = function ({ spacing }) {
   return (
     <div
       className={classNames(
+        "spacing",
         top.large === top.small
           ? smallTopSpacing
           : [largeTopSpacing, smallTopSpacing],

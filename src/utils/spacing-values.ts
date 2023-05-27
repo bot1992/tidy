@@ -1,7 +1,7 @@
 const spacingValues: {
   [key: string]: string
 } = {
-  none: "",
+  none: "none",
   extraSmall: "es",
   small: "s",
   smallLarge: "sl",

@@ -39,7 +39,7 @@ $spacingValues: (
   ),
   "el": (
     32,
-    40,
+    44,
   ),
 );
 
@@ -82,18 +82,20 @@ $spacingValues: (
   }
 
   // spacing - large
-  @media screen and (min-width: 1024px) {
-    .lg\:mt-#{$name} {
-      margin-top: ($def / 4) + rem;
-    }
-    .lg\:mb-#{$name} {
-      margin-bottom: ($def / 4) + rem;
-    }
-    .lg\:ml-#{$name} {
-      margin-left: ($def / 4) + rem;
-    }
-    .lg\:mr-#{$name} {
-      margin-right: ($def / 4) + rem;
+  .spacing {
+    @media screen and (min-width: 1024px) {
+      &.lg\:mt-#{$name} {
+        margin-top: ($def / 4) + rem;
+      }
+      &.lg\:mb-#{$name} {
+        margin-bottom: ($def / 4) + rem;
+      }
+      &.lg\:ml-#{$name} {
+        margin-left: ($def / 4) + rem;
+      }
+      &.lg\:mr-#{$name} {
+        margin-right: ($def / 4) + rem;
+      }
     }
   }
 

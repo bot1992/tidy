@@ -110,6 +110,7 @@ const Field: FC<RenderFieldProps> = function ({ field, control, isLastField }) {
 
             {fieldToRender.field === "input" ? (
               <input
+                id={name}
                 name={name}
                 type={name === "password" ? "password" : fieldToRender.type}
                 value={value ?? ""}
@@ -126,6 +127,7 @@ const Field: FC<RenderFieldProps> = function ({ field, control, isLastField }) {
               />
             ) : fieldToRender.field === "textarea" ? (
               <textarea
+                id={name}
                 name={name}
                 value={value ?? ""}
                 required={required}
@@ -138,6 +140,7 @@ const Field: FC<RenderFieldProps> = function ({ field, control, isLastField }) {
               />
             ) : (
               <select
+                id={name}
                 className="form-select w-full text-gray-300"
                 onChange={(e) => onChange(e.target.value)}
               >

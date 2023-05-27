@@ -36,8 +36,11 @@ const ContentGrid: FC<Props> = function ({
             className="absolute inset-0 -my-8 md:-my-12 pointer-events-none hidden md:flex"
             aria-hidden="true"
           >
-            {new Array(4).fill(null).map(() => (
-              <div className="h-full w-full border-l last:border-r odd:hidden lg:odd:block border-slate-100" />
+            {new Array(4).fill(null).map((_, index) => (
+              <div
+                key={index}
+                className="h-full w-full border-l last:border-r odd:hidden lg:odd:block border-slate-100"
+              />
             ))}
           </div>
         )}

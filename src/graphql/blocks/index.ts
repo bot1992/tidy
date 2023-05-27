@@ -146,7 +146,7 @@ export const PRICING_TABLES_BLOCK = `
             yearly
         }
         callToAction ${CALL_TO_ACTION_FIELDS}
-        mostPopular
+        tag
         featuresListText
         coreFeatures {
             id
